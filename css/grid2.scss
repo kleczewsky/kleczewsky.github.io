@@ -1,0 +1,264 @@
+@import "grid2-colors";
+
+@import url(" https:fonts.googleapis.com/css?family=Anton|Roboto|Russo+One&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body,
+html {
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    display: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+// Main Layout styles
+main {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6rem 1fr 4rem;
+    > header {
+        color: v(primary-text);
+        background-color: v(primary);
+    }
+    .content {
+        background-color: v(content-background);
+    }
+    footer {
+        color: #fff;
+        background-color: v(darkgray);
+        padding: 10px;
+        display: flex;
+
+        place-content: flex-end;
+        > * {
+            align-self: center;
+            height: fit-content;
+        }
+        > i {
+            order: -1;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1280px;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.scene {
+    width: 260px;
+    height: 400px;
+    margin: 5rem 5rem;
+    float: left;
+    perspective: 1000px;
+}
+.poster {
+    width: 50%;
+    height: 50%;
+    background-color: v(secondary);
+    transform: translatex(-131px) translatez(-130px) rotateY(-90deg);
+}
+.movie {
+    width: 260px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: translateZ(-130px);
+    transition: all 350ms;
+    background-color: v(primary-light);
+}
+.movie:hover {
+    transform: translatez(100px) translateX(130px) rotateY(78deg);
+}
+.movie:hover::before {
+    box-shadow: inset 300px 0px 40px rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+.movie::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: box-shadow 350ms;
+}
+.movie::after {
+    content: "";
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+    transform-origin: 100% 100%;
+    transform: rotateX(90deg);
+    transition: box-shadow 350ms;
+}
+
+.movie:hover::after {
+    box-shadow: 20px -5px 50px rgba(0, 0, 0, 0.3);
+}
+.movie .poster,
+.movie .info {
+    position: absolute;
+    width: 260px;
+    height: 400px;
+    backface-visibility: visible;
+}
+
+nav {
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    height: 100%;
+    position: relative;
+    input {
+        height: 2rem;
+        width: 3rem;
+        position: absolute;
+        opacity: 0;
+        top: 2rem;
+        right: 2rem;
+        z-index: 103;
+
+        cursor: pointer;
+        &:checked ~ ul {
+            transform: translateX(0%);
+        }
+        &:checked ~ .menu-hamburger > .cross {
+            display: block;
+        }
+        &:checked ~ .menu-hamburger > .burger {
+            display: none;
+        }
+    }
+    .menu-hamburger {
+        height: 100%;
+        display: flex;
+
+        > i {
+            z-index: 102;
+            margin: auto 2rem;
+            margin-left: auto;
+            height: fit-content;
+        }
+        > .cross {
+            display: none;
+        }
+    }
+
+    ul {
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        transition: transform 0.5s ease;
+        transform: translatey(-100%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        overflow: visible;
+        .navItem {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0;
+            z-index: 100;
+            background-color: #182848;
+
+            &:last-child {
+                background-color: v(secondary);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    //only for bigger screens
+    nav {
+        input {
+            display: none;
+        }
+        .menu-hamburger {
+            display: none;
+        }
+        ul {
+            width: 100%;
+            padding: 1rem 5rem;
+            display: inline-flex;
+            transform: none;
+            flex-direction: initial;
+            list-style: none;
+
+            .navItem {
+                transition: all 0.2s ease;
+                cursor: pointer;
+
+                //----------------Border gradient on top of buttons -------------------
+                border-top: 5px solid;
+
+                border-image: linear-gradient(
+                        45deg,
+                        rgba(173, 43, 43, 1) 0%,
+                        rgba(39, 39, 175, 1) 51%,
+                        rgba(8, 143, 114, 1) 100%
+                    )
+                    1;
+                //--------End OF-Border gradient on top of buttons -------------------
+
+                padding: 10px;
+                height: 4rem;
+                width: 200px;
+                background-color: v(primary-light);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+                    0 6px 6px rgba(0, 0, 0, 0.23);
+
+                li {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                // Add margin for text in p elements
+                p {
+                    margin-left: 10px;
+                }
+
+                // Add left margin to everything on nav
+                &:not(:first-child) {
+                    margin-left: 1rem;
+                }
+
+                // Logout on far right
+                &:last-child {
+                    width: 150px;
+                    background-color: v(secondary);
+                    justify-self: end;
+                    margin-left: auto;
+                }
+
+                // Scale effect on hover
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

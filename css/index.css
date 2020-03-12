@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Squada+One&display=swap");
+body {
+  background: #f5f5f5;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mainBackground {
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#071b26), color-stop(30%, #071b26), color-stop(80%, #8a3b12), to(#240e03));
+  background: linear-gradient(to bottom, #071b26 0%, #071b26 30%, #8a3b12 80%, #240e03 100%);
+}
+
+.navBarWrap {
+  background: #33333333;
+  border-bottom: 2px solid;
+  -o-border-image: linear-gradient(45deg, #008f68, #fae042) 1;
+     border-image: linear-gradient(45deg, #008f68, #fae042) 1;
+}
+
+.navBarWrap .navBarList {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.navBarWrap .navBarList .nav--button {
+  margin: 0 4rem;
+  color: #f1f1f1;
+  font-family: "Squada One";
+  font-size: 2rem;
+  text-transform: uppercase;
+  width: 10rem;
+  height: 4rem;
+  background: #33333333;
+  text-align: center;
+  line-height: 4rem;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.navBarWrap .navBarList .nav--button.active {
+  color: gold;
+}
+
+.navBarWrap .navBarList .nav--button:hover {
+  -webkit-transform: translate(5px, -5px);
+          transform: translate(5px, -5px);
+}
+
+.navBarWrap .navBarList .nav--button:active {
+  background: #44444466;
+  -webkit-transition: background 0.5ms;
+  transition: background 0.5ms;
+}
+
+.mainContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: calc(100vh - 98px);
+  overflow: hidden;
+}
+
+.form {
+  color: #e3e3e3;
+  font-family: "Open Sans";
+  background: #12121255;
+  width: 20vw;
+  padding: 1rem;
+}
+
+.form > .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+.form > .input input {
+  height: 2rem;
+}
+
+.form > .input.button > button {
+  height: 3rem;
+}

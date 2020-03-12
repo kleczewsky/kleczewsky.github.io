@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Squada+One&display=swap");
+
+body {
+    background: #f5f5f5;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mainBackground {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+
+    z-index: -1;
+
+    background: linear-gradient(
+        to bottom,
+        #071b26 0%,
+        #071b26 30%,
+        #8a3b12 80%,
+        #240e03 100%
+    );
+}
+
+.navBarWrap {
+    background: #33333333;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+
+    .navBarList {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 1rem 0;
+
+        .nav--button {
+            margin: 0 4rem;
+            color: #f1f1f1;
+            font-family: "Squada One";
+            font-size: 2rem;
+            text-transform: uppercase;
+
+            width: 10rem;
+            height: 4rem;
+            background: #33333333;
+            text-align: center;
+            line-height: 4rem;
+            transition: all 0.1s ease;
+
+            cursor: pointer;
+            user-select: none;
+
+            &.active {
+                color: gold;
+            }
+
+            &:hover {
+                transform: translate(5px, -5px);
+            }
+            &:active {
+                background: #44444466;
+                transition: background 0.5ms;
+            }
+        }
+    }
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 98px);
+    overflow: hidden;
+}
+
+.form {
+    color: #e3e3e3;
+    font-family: "Open Sans";
+
+    background: #12121255;
+    width: 20vw;
+
+    padding: 1rem;
+
+    > .input {
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem;
+
+        input {
+            height: 2rem;
+        }
+        &.button > button {
+            height: 3rem;
+        }
+    }
+}

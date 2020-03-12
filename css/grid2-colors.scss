@@ -1,0 +1,23 @@
+@function v($var) {
+    @return var(--#{$var});
+}
+
+:root {
+    --primary: #176eb9;
+    --primary-text: #fff;
+    --primary-light: #5d9cec;
+    --primary-dark: #004488;
+    --secondary: #ffc107;
+    --secondary-text: #111;
+    --secondary-light: #fff350;
+    --darkgray: #222;
+    --content-background: #e2e2e2;
+}
+
+.primary-color {
+    color: v(primary);
+}
+
+.secondary-color {
+    color: v(secondary);
+}
