@@ -1,8 +1,9 @@
 .charhitbox {
-    font-size: 10rem;
-    padding: 2rem;
+    font-size: 8rem;
+    padding: 0rem;
     position: relative;
     background-color: rgb(80, 35, 35);
+    left: 100%;
     opacity: 0;
     color: white;
 }
@@ -31,5 +32,23 @@
         &:nth-child(5) {
             transition-delay: 800ms;
         }
+    }
+}
+@media screen and (max-width: 900px) {
+    .napis {
+        height: 8rem;
+        transform: rotate(90deg);
+    }
+    .charhitbox {
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .napis {
+        height: 3.5rem;
+        transform: rotate(90deg);
+    }
+    .charhitbox {
+        font-size: 3rem;
     }
 }

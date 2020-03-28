@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Squada+One&display=swap");
+@import "grid2-colors";
+
+// --------------Landing page----------------
 
 body {
     background: #f5f5f5;
@@ -31,12 +34,12 @@ a {
     );
 }
 
-// NAVBAR index.html i reszta
+// --------------- NAVBAR index.html i reszta ----------------------
 
 .navBarWrap {
-    background: #33333333;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+    //  background: #33333333;
+    //  border-bottom: 2px solid;
+    //  border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
 
     .navBarList {
         list-style: none;
@@ -55,7 +58,7 @@ a {
 
             width: 10rem;
             height: 4rem;
-            background: #33333333;
+            // background: #33333333;
             text-align: center;
             line-height: 4rem;
             transition: all 0.1s ease;
@@ -64,7 +67,7 @@ a {
             user-select: none;
 
             &.active {
-                color: gold;
+                color: v(secondary);
             }
 
             &:hover {
@@ -84,28 +87,4 @@ a {
     justify-content: center;
     height: calc(100vh - 98px);
     overflow: hidden;
-}
-
-.form {
-    color: #e3e3e3;
-    font-family: "Open Sans";
-
-    background: #12121255;
-    width: 20vw;
-
-    padding: 1rem;
-
-    > .input {
-        display: flex;
-        flex-direction: column;
-
-        padding: 1rem;
-
-        input {
-            height: 2rem;
-        }
-        &.button > button {
-            height: 3rem;
-        }
-    }
 }

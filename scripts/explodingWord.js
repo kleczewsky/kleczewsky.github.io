@@ -1,24 +1,32 @@
 // Add Event listeners for hitboxes
 function setupLettersForExplode() {
     //Reference for svg and hitboxes
-    const erykWord = document.querySelectorAll(".napis");
-    console.log(erykWord);
+    const shatterWord = document.querySelectorAll(".napis");
+    console.log(shatterWord);
     const hitboxLetters = document.querySelectorAll(".charhitbox");
     console.log(hitboxLetters);
     //Colors array
-    const colors = ["#ff6f35", "#ffb22d", "#ffe91e", "#26ff6c"];
+    const colors = ["#000000", "#bb4646", "#cb39ff", "#08e0b2"];
 
-    for (let i = 0; i < erykWord[0].children.length - 1; i++) {
+    // Fly in letters
+    for (let i = 0; i < shatterWord[0].children.length - 1; i++) {
         // Remove 1 from lenght because of "defs" being one of the children
-        const letterInWord = erykWord[0].children[i + 1];
+        const letterInWord = shatterWord[0].children[i + 1];
         // Skip 1 because of "defs" being first
 
         console.log(letterInWord);
 
         flyinMutatedLetter(letterInWord, colors[i]);
+    }
+
+    //  EventListener Setup Skip font group
+    for (let i = 0; i < shatterWord[0].children.length - 2; i++) {
+        // Remove 2 to skip font
+        const letterInWord = shatterWord[0].children[i + 2];
+        // Skip 2 defs + font
 
         hitboxLetters[i].addEventListener("mouseenter", () => {
-            explodeLetter(letterInWord, colors[i]);
+            explodeLetter(letterInWord, colors[i + 1]); // Skip Black Color
         });
         hitboxLetters[i].addEventListener("mouseleave", () => {
             implodeLetter(letterInWord);
@@ -32,7 +40,9 @@ function setupLettersForExplode() {
     }
 }
 
-setupLettersForExplode();
+window.addEventListener("load", function() {
+    setupLettersForExplode();
+});
 
 //Exploding each "pixel" in a letter and adding color
 function explodeLetter(letterReference, color = "hsl(32, 100%, 59%)") {

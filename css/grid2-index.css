@@ -1,5 +1,5 @@
 :root {
-  --primary: #176eb9;
+  --primary: #1b2c4b;
   --primary-text: #fff;
   --primary-light: #5d9cec;
   --primary-dark: #004488;
@@ -66,6 +66,10 @@ main .topper .particles-wrap > .box2,
 main .topper .particles-wrap .box3 {
   z-index: 2;
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 main .topper .particles-wrap::before {
@@ -84,10 +88,6 @@ main .topper .particles-wrap > canvas {
 
 main .content-first {
   scroll-snap-align: start;
-  border-top: 3px solid;
-  -o-border-image: linear-gradient(90deg, #7c36be 0%, #ad2845 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, from(#7c36be), to(#ad2845)) 1;
-     border-image: linear-gradient(90deg, #7c36be 0%, #ad2845 100%) 1;
   background-color: var(--primary-dark);
   color: var(--primary-text);
   font-family: "Roboto", sans-serif;

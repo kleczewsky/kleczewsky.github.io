@@ -1,9 +1,11 @@
+//------------- Colors ---------------
+
 @function v($var) {
     @return var(--#{$var});
 }
 
 :root {
-    --primary: #176eb9;
+    --primary: #1b2c4b;
     --primary-text: #fff;
     --primary-light: #5d9cec;
     --primary-dark: #004488;

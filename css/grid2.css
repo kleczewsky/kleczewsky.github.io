@@ -1,6 +1,6 @@
 @import url(" https:fonts.googleapis.com/css?family=Anton|Roboto|Russo+One&display=swap");
 :root {
-  --primary: #176eb9;
+  --primary: #1b2c4b;
   --primary-text: #fff;
   --primary-light: #5d9cec;
   --primary-dark: #004488;
@@ -50,12 +50,30 @@ main {
 }
 
 main > header {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  height: 96px;
+  z-index: 200;
   color: var(--primary-text);
-  background-color: var(--primary);
+  background: radial-gradient(circle, #1b2c4b 0%, black 100%);
+  border-bottom: 3px solid;
+  -o-border-image: linear-gradient(90deg, #ad2845 0%, #7c36be 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#ad2845), to(#7c36be)) 1;
+     border-image: linear-gradient(90deg, #ad2845 0%, #7c36be 100%) 1;
+}
+
+main > header.expand {
+  height: 300px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 main .content {
   background-color: var(--content-background);
+}
+
+main .content.game {
+  height: calc(100vh - 96px);
 }
 
 main footer {
@@ -65,7 +83,14 @@ main footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  place-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 3px solid;
+  -o-border-image: linear-gradient(90deg, #7c36be 0%, #ad2845 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#7c36be), to(#ad2845)) 1;
+     border-image: linear-gradient(90deg, #7c36be 0%, #ad2845 100%) 1;
 }
 
 main footer > * {
@@ -77,115 +102,37 @@ main footer > * {
   height: fit-content;
 }
 
-main footer > i {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
-  margin-right: 1rem;
-}
-
-.wrapper {
-  margin: auto;
-  max-width: 1280px;
-}
-
-.stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+main footer .footer-textWrap {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  list-style: none;
-  padding: 0;
 }
 
-.scene {
-  width: 260px;
-  height: 400px;
-  margin: 5rem 5rem;
-  float: left;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+main footer .footer-textWrap > i {
+  display: none;
 }
 
-.poster {
-  width: 50%;
-  height: 50%;
-  background-color: var(--secondary);
-  -webkit-transform: translatex(-131px) translatez(-130px) rotateY(-90deg);
-          transform: translatex(-131px) translatez(-130px) rotateY(-90deg);
+main footer .footer-contact {
+  margin-right: unset;
+  color: #ffffff80;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.movie {
-  width: 260px;
-  height: 400px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translateZ(-130px);
-          transform: translateZ(-130px);
-  -webkit-transition: all 350ms;
-  transition: all 350ms;
-  background-color: var(--primary-light);
+main footer .footer-contact > a {
+  margin-left: 1rem;
 }
 
-.movie:hover {
-  -webkit-transform: translatez(100px) translateX(130px) rotateY(78deg);
-          transform: translatez(100px) translateX(130px) rotateY(78deg);
+main footer .footer-contact > a:hover {
+  color: #ffffffbb;
 }
 
-.movie:hover::before {
-  -webkit-box-shadow: inset 300px 0px 40px rgba(255, 255, 255, 0.8);
-          box-shadow: inset 300px 0px 40px rgba(255, 255, 255, 0.8);
-  z-index: 1;
-}
-
-.movie::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  -webkit-transition: -webkit-box-shadow 350ms;
-  transition: -webkit-box-shadow 350ms;
-  transition: box-shadow 350ms;
-  transition: box-shadow 350ms, -webkit-box-shadow 350ms;
-}
-
-.movie::after {
-  content: "";
-  width: 260px;
-  height: 260px;
-  position: absolute;
-  bottom: 0;
-  -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-  -webkit-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
-  -webkit-transform: rotateX(90deg);
-          transform: rotateX(90deg);
-  -webkit-transition: -webkit-box-shadow 350ms;
-  transition: -webkit-box-shadow 350ms;
-  transition: box-shadow 350ms;
-  transition: box-shadow 350ms, -webkit-box-shadow 350ms;
-}
-
-.movie:hover::after {
-  -webkit-box-shadow: 20px -5px 50px rgba(0, 0, 0, 0.3);
-          box-shadow: 20px -5px 50px rgba(0, 0, 0, 0.3);
-}
-
-.movie .poster,
-.movie .info {
-  position: absolute;
-  width: 260px;
-  height: 400px;
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
+main footer i {
+  margin-right: 1rem;
 }
 
 nav {
@@ -196,47 +143,21 @@ nav {
   position: relative;
 }
 
-nav input {
-  height: 2rem;
-  width: 3rem;
+nav .menu-hamburger {
+  z-index: 201;
+  height: 50px;
+  width: 50px;
   position: absolute;
-  opacity: 0;
-  top: 2rem;
-  right: 2rem;
-  z-index: 103;
-  cursor: pointer;
+  top: 23px;
+  right: 25px;
+  font-size: 48px;
 }
 
-nav input:checked ~ ul {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-}
-
-nav input:checked ~ .menu-hamburger > .cross {
+nav .menu-hamburger > .menu {
   display: block;
 }
 
-nav input:checked ~ .menu-hamburger > .burger {
-  display: none;
-}
-
-nav .menu-hamburger {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-nav .menu-hamburger > i {
-  z-index: 102;
-  margin: auto 2rem;
-  margin-left: auto;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-nav .menu-hamburger > .cross {
+nav .menu-hamburger > .close {
   display: none;
 }
 
@@ -262,6 +183,11 @@ nav ul {
   overflow: visible;
 }
 
+nav ul.expand {
+  -webkit-transform: none;
+          transform: none;
+}
+
 nav ul .navItem {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -275,10 +201,6 @@ nav ul .navItem {
   padding: 1rem 0;
   z-index: 100;
   background-color: #182848;
-}
-
-nav ul .navItem:last-child {
-  background-color: var(--secondary);
 }
 
 @media only screen and (min-width: 991px) {
@@ -339,5 +261,17 @@ nav ul .navItem:last-child {
   nav ul .navItem:hover {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
+  }
+  main footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main footer .footer-contact {
+    margin-right: auto;
+  }
+  main footer .footer-textWrap > i {
+    display: block;
   }
 }
