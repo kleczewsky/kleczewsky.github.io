@@ -2,7 +2,12 @@
 # ignore assets
 /assets
 /photos
+/projekty
 
 # ignore xcf
 
 *.xcf
+
+# remove files from rep
+
+/unused
