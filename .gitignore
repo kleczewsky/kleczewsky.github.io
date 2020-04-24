@@ -1,0 +1,8 @@
+
+# ignore assets
+/assets
+/photos
+
+# ignore xcf
+
+*.xcf
