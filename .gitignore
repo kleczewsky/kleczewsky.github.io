@@ -11,3 +11,7 @@
 # remove files from rep
 
 /unused
+
+#ignore htaccess
+
+*.htaccess
