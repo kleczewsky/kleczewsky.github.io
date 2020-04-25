@@ -132,18 +132,12 @@ function menu() {
 
     ctx.fillRect(100, 200, 400, 50);
 
-    ctx.fillRect(100, 300, 400, 50);
-
-    ctx.fillRect(100, 400, 400, 50);
-
     ctx.fillStyle = "#229911";
     ctx.font = "45px Arial";
 
     ctx.fillText("Hello Player ", 300, 100);
 
     ctx.fillText("Start ", 150, 240);
-    ctx.fillText("Poziom ", 150, 340);
-    ctx.fillText("Costam ", 150, 440);
 }
 
 // KLASA GRACZA
@@ -223,7 +217,7 @@ class Pocisk {
 function renderPociskow() {
     let TTLDel = 0;
 
-    grajs.pociski.forEach(function(pocisk) {
+    grajs.pociski.forEach(function (pocisk) {
         pocisk.timetolive -= 1;
         if (pocisk.timetolive < 0) {
         } else {
@@ -382,7 +376,7 @@ class Asteroida {
 function renderAsteroid() {
     let TTLDel = 0;
 
-    grajs.asteroidy.forEach(function(pocisk) {
+    grajs.asteroidy.forEach(function (pocisk) {
         if (pocisk.typ == 1) {
             pocisk.obliczWektordogracza();
             pocisk.vect[0] = pocisk.vect[0] / pocisk.magnit; // WEKTOR JEDNOSTKOWY
@@ -455,7 +449,7 @@ class Powerup {
 function renderPowerupow() {
     let TTLDel = 0;
 
-    grajs.powerupy.forEach(function(powerup) {
+    grajs.powerupy.forEach(function (powerup) {
         powerup.timetolive -= 1;
 
         if (powerup.timetolive < 0) {
@@ -499,7 +493,7 @@ function kontrolaGracza() {
     // OBROT W KIERUNKU MYSZKI
     grajs.vektordomyszki = [
         grajs.mousex - grajs.player.x,
-        grajs.mousey - grajs.player.y
+        grajs.mousey - grajs.player.y,
     ];
     let katdomyszki =
         (Math.atan2(grajs.vektordomyszki[1], grajs.vektordomyszki[0]) * 180) /
@@ -571,8 +565,8 @@ function sprawdzKolizjeOkrag(OkragA, OkragB) {
 }
 // FUNKCJA SPRAWDZAJACA DWIE TABLICE POCISK I ASTEROIDA
 function sprawdzKolizjeArray() {
-    grajs.pociski.forEach(function(pocisk) {
-        grajs.asteroidy.forEach(function(asteroida) {
+    grajs.pociski.forEach(function (pocisk) {
+        grajs.asteroidy.forEach(function (asteroida) {
             if (sprawdzKolizjeOkrag(pocisk, asteroida)) {
                 if (pocisk.timetolive > 0 && asteroida.timetolive > 0) {
                     pocisk.timetolive = -1;
@@ -590,13 +584,13 @@ function sprawdzKolizjeArray() {
 
 // FUNCKJA FILTRUJACA OBIEKTY KTORYCH TTL JEST PONIZEJ 0
 function filturjTTL() {
-    grajs.pociski = grajs.pociski.filter(function(obj, indx, arr) {
+    grajs.pociski = grajs.pociski.filter(function (obj, indx, arr) {
         if (obj.timetolive > 0) return true;
     });
-    grajs.asteroidy = grajs.asteroidy.filter(function(obj, indx, arr) {
+    grajs.asteroidy = grajs.asteroidy.filter(function (obj, indx, arr) {
         if (obj.timetolive > 0) return true;
     });
-    grajs.powerupy = grajs.powerupy.filter(function(obj, indx, arr) {
+    grajs.powerupy = grajs.powerupy.filter(function (obj, indx, arr) {
         if (obj.timetolive > 0) return true;
     });
 }
@@ -682,7 +676,9 @@ function getCanvasMousePos(canvas, evt) {
         x:
             ((evt.clientX - rect.left) / (rect.right - rect.left)) *
             canvas.width,
-        y: ((evt.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height
+        y:
+            ((evt.clientY - rect.top) / (rect.bottom - rect.top)) *
+            canvas.height,
     };
 }
 
