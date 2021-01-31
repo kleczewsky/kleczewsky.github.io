@@ -46,13 +46,12 @@ function petlaGry() {
         gameMusic.pause();
         menu();
     }
-
-    window.requestAnimationFrame(petlaGry);
 }
 
 function przeksztalcenie() {
     grajs.poziom.godnosc = Math.random();
 
+    ustawPoziom();
     kontrolaGracza();
     sprawdzKolizjeArray();
     spawnAsteroid();
@@ -667,7 +666,13 @@ function updateMouseObj(e) {
     grajs.mousex = mouseobj.x;
     grajs.mousey = mouseobj.y;
 
-    if (!menuMusic.ended && grajs.stanGry == 0) menuMusic.play();
+    let promise;
+    if (!menuMusic.ended && grajs.stanGry == 0) {
+        promise = menuMusic.play();
+    }
+    if (promise !== undefined) {
+        promise.then(() => {}).catch(() => {});
+    }
 }
 
 function getCanvasMousePos(canvas, evt) {
@@ -722,14 +727,13 @@ function reset() {
 }
 
 //POZIOM
-function setPoziom() {
+function ustawPoziom() {
     grajs.poziom.astRozstrzal = 300;
-    grajs.poziom.godnosc = 1;
 }
 
 // INIT
 function init() {
-    grajs.player = new Gracz("Irek");
+    grajs.player = new Gracz("Player");
     grajs.pociski = [];
     grajs.asteroidy = [];
     grajs.powerupy = [];
@@ -742,11 +746,9 @@ function init() {
     gameMusic.loop = "true";
     gameMusic.volume = 0.09;
 
-    console.log(grajs.player);
-    console.log(grajs.player.name);
-    setPoziom();
-
-    petlaGry();
+    setInterval(() => {
+        petlaGry();
+    }, 1000 / 60);
 }
 
 let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

@@ -99,6 +99,19 @@ main {
     }
 }
 
+.game-options {
+    background-color: slateblue;
+    position: fixed;
+    height: calc(100vh - 96px);
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem 1rem;
+
+    transform: translate(90%);
+}
+
 nav {
     font-family: "Anton", sans-serif;
     font-size: 1.5rem;

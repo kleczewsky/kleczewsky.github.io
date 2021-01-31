@@ -46,7 +46,7 @@ function paletka(x) {
     this.wys = 50;
     this.x = x;
     this.y = canvas.height / 2 - this.wys / 2;
-    this.maluj = function() {
+    this.maluj = function () {
         this.kolor = "#cccccc"; //+ Math.floor(Math.random() * 109) + Math.floor(Math.random() * 109);
         ctx.beginPath;
         ctx.fillStyle = this.kolor;
@@ -95,7 +95,7 @@ function pilka(promien, xoffst, yoffst) {
     this.promien = promien;
     this.trailx = [];
     this.traily = [];
-    this.maluj = function() {
+    this.maluj = function () {
         {
             if (pong.ogon <= 51) pong.ogon++;
             else pong.ogon = 0;
@@ -285,7 +285,12 @@ function odpuszczenie(przycisk) {
     }
 }
 
-init();
+let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (isMobile) {
+    window.location.href = "./gra-mobile.html";
+} else {
+    init();
+}
 
 document.addEventListener("keydown", wcisniecie);
 document.addEventListener("keyup", odpuszczenie);

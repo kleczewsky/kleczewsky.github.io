@@ -135,6 +135,23 @@ main footer i {
   margin-right: 1rem;
 }
 
+.game-options {
+  background-color: slateblue;
+  position: fixed;
+  height: calc(100vh - 96px);
+  right: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 1rem;
+  -webkit-transform: translate(90%);
+          transform: translate(90%);
+}
+
 nav {
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;
