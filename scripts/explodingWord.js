@@ -2,9 +2,9 @@
 function setupLettersForExplode() {
     //Reference for svg and hitboxes
     const shatterWord = document.querySelectorAll(".napis");
-    console.log(shatterWord);
+    // console.log(shatterWord);
     const hitboxLetters = document.querySelectorAll(".charhitbox");
-    console.log(hitboxLetters);
+    // console.log(hitboxLetters);
     //Colors array
     const colors = ["#000000", "#bb4646", "#cb39ff", "#08e0b2"];
 
@@ -14,7 +14,7 @@ function setupLettersForExplode() {
         const letterInWord = shatterWord[0].children[i + 1];
         // Skip 1 because of "defs" being first
 
-        console.log(letterInWord);
+        //console.log(letterInWord);
 
         flyinMutatedLetter(letterInWord, colors[i]);
     }
@@ -40,7 +40,7 @@ function setupLettersForExplode() {
     }
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     setupLettersForExplode();
 });
 

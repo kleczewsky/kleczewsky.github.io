@@ -5,13 +5,20 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="./css/grid2.css" />
+
         <link rel="stylesheet" href="./css/index.css" />
         <link rel="stylesheet" href="./css/posters.css" />
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&family=Squada+One&display=swap"
+            rel="stylesheet"
+        />
+
         <title>Kleczewsky.com - Projekty</title>
     </head>
 
@@ -23,14 +30,13 @@
                         <li class="nav--button">
                             <a href="./">Glowna </a>
                         </li>
-                        <li class="nav--button">
-                            <a href="./grajs.html">GraJS</a>
-                        </li>
-                        <li class="nav--button">
-                            <a href="./galeria.html">Galeria</a>
-                        </li>
+
                         <li class="nav--button active">
                             <a href="#">Projekty</a>
+                        </li>
+
+                        <li class="nav--button">
+                            <a href="./galeria.html">O Mnie</a>
                         </li>
                     </ul>
                     <div
@@ -48,7 +54,7 @@
                 <div class="wrapper">
                     <ul class="stage">
                         <li class="scene">
-                            <div class="movie">
+                            <div class="project">
                                 <div class="poster">
                                     <header>
                                         <div class="img-thumbnail">
@@ -60,9 +66,9 @@
                                     </header>
                                     <div class="main">
                                         <h1>GraJS</h1>
-                                        <span class="year">JS</span>
+                                        <span class="tech">JS</span>
                                         <span class="rating"></span>
-                                        <span class="duration"
+                                        <span class="github"
                                             ><a
                                                 href="https://github.com/MrNikoPL/GraJS.js"
                                                 class="github-link"
@@ -73,10 +79,21 @@
                                         <p>
                                             Niewielka gra, w której gracz wciela
                                             się w pilota statku kosmicznego.
-                                            Jego zadaniem jest zniszczyć jak
-                                            najwięcej wrogich statków i samemu
-                                            przy okazji nie zostać zestrzelonym.
                                         </p>
+                                        <div
+                                            class="button-wrap"
+                                            style="
+                                                display: flex;
+                                                justify-content: center;
+                                            "
+                                        >
+                                            <a
+                                                class="poster--button"
+                                                href="./grajs.html"
+                                            >
+                                                Zagraj
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="info">
@@ -90,7 +107,7 @@
                             </div>
                         </li>
                         <li class="scene">
-                            <div class="movie">
+                            <div class="project">
                                 <div class="poster">
                                     <header>
                                         <div class="img-thumbnail">
@@ -102,9 +119,9 @@
                                     </header>
                                     <div class="main">
                                         <h1>RickAndSearch</h1>
-                                        <span class="year">React</span>
+                                        <span class="tech">React</span>
                                         <span class="rating"></span>
-                                        <span class="duration"
+                                        <span class="github"
                                             ><a
                                                 href="https://github.com/MrNikoPL/rickandmortyBrowser"
                                                 class="github-link"
@@ -143,7 +160,7 @@
                             </div>
                         </li>
                         <li class="scene">
-                            <div class="movie">
+                            <div class="project">
                                 <div class="poster">
                                     <header>
                                         <div class="img-thumbnail">
@@ -155,9 +172,9 @@
                                     </header>
                                     <div class="main">
                                         <h1>Pong</h1>
-                                        <span class="year">JS</span>
+                                        <span class="tech">JS</span>
                                         <span class="rating"></span>
-                                        <span class="duration"
+                                        <span class="github"
                                             ><a
                                                 href="https://github.com/MrNikoPL/pong.js"
                                                 class="github-link"
@@ -190,6 +207,59 @@
                                         class="poster-container"
                                         style="
                                             background-image: url('./projekty/Pong.png ');
+                                        "
+                                    ></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="scene">
+                            <div class="project">
+                                <div class="poster">
+                                    <header>
+                                        <div class="img-thumbnail">
+                                            <img
+                                                src="./projekty/camera.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </header>
+                                    <div class="main">
+                                        <h1>Galeria</h1>
+                                        <span class="tech">HTML + CSS</span>
+                                        <span class="rating"></span>
+                                        <span class="github"
+                                            ><a
+                                                href="https://github.com/MrNikoPL/mrnikopl.github.io"
+                                                class="github-link"
+                                                ><strong>Github</strong></a
+                                            ></span
+                                        >
+
+                                        <p>
+                                            Prosta responsywna galeria, z
+                                            autorskimi zdjęciami
+                                        </p>
+                                        <div
+                                            class="button-wrap"
+                                            style="
+                                                display: flex;
+                                                justify-content: center;
+                                            "
+                                        >
+                                            <a
+                                                class="poster--button"
+                                                href="./galeria.html"
+                                            >
+                                                Zobacz
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div
+                                        class="poster-container"
+                                        style="
+                                            background-image: url('./projekty/galeria.jpg ');
                                         "
                                     ></div>
                                 </div>
