@@ -7,7 +7,7 @@
   --secondary-text: #111;
   --secondary-light: #fff350;
   --darkgray: #222;
-  --content-background: #e2e2e2;
+  --content-background: #070b12;
 }
 
 .primary-color {
@@ -110,8 +110,8 @@
 }
 
 .project:hover::before {
-  -webkit-box-shadow: inset -300px 0px 40px rgba(255, 255, 255, 0.6);
-          box-shadow: inset -300px 0px 40px rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: inset -300px 0px 40px rgba(94, 94, 94, 0.6);
+          box-shadow: inset -300px 0px 40px rgba(94, 94, 94, 0.6);
   z-index: 1;
 }
 

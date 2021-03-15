@@ -71,7 +71,7 @@
     transform: translatez(100px) translateX(130px) rotateY(78deg);
 }
 .project:hover::before {
-    box-shadow: inset -300px 0px 40px rgba(255, 255, 255, 0.6);
+    box-shadow: inset -300px 0px 40px rgba(94, 94, 94, 0.6);
     z-index: 1;
 }
 .project::before {

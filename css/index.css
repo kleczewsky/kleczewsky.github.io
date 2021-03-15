@@ -7,7 +7,7 @@
   --secondary-text: #111;
   --secondary-light: #fff350;
   --darkgray: #222;
-  --content-background: #e2e2e2;
+  --content-background: #070b12;
 }
 
 .primary-color {
@@ -182,6 +182,7 @@ main .topper .particles-wrap > canvas {
 
 main .content {
   background-color: var(--content-background);
+  position: relative;
   min-height: calc(100vh - 112px - 47px);
 }
 
@@ -244,10 +245,235 @@ main footer i {
   margin-right: 1rem;
 }
 
-@media only screen and (min-width: 991px) {
-  nav .menu-hamburger {
-    display: none;
+.aboutme {
+  min-height: calc(100vh - 112px - 47px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.aboutme .info {
+  background-image: url("../assets/img/info-bckg.jpg");
+  background-size: cover;
+  padding: 3rem;
+  color: whitesmoke;
+  -webkit-box-shadow: inset 0px 0px 20px 8px #000000;
+          box-shadow: inset 0px 0px 20px 8px #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutme .info .info-face {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  height: 250px;
+  width: 250px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  border: 2px solid #a52b5a;
+  -webkit-box-shadow: 5px 5px 10px #0000006b;
+          box-shadow: 5px 5px 10px #0000006b;
+}
+
+.aboutme .info h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0rem;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 5px black;
+}
+
+.aboutme .board {
+  padding: 3rem;
+  background-color: var(--content-background);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.aboutme .board .card-stack {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.aboutme .board .card-stack .card {
+  position: absolute;
+  height: 500px;
+  width: 360px;
+  background-color: #08091d;
+  color: whitesmoke;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.aboutme .board .card-stack .card p {
+  padding: 2rem;
+  text-align: center;
+}
+
+.aboutme .board .card-stack .card .img-container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2c085b), to(#3a0d75));
+  background: linear-gradient(180deg, #2c085b 0%, #3a0d75 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 2px solid var(--secondary);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.aboutme .board .card-stack .card button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  float: right;
+  margin: 0 2rem;
+}
+
+.aboutme .board .card-stack .card button:active {
+  background-color: #ffffff17;
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.aboutme .board .card-stack .card button:focus {
+  outline: none;
+}
+
+.aboutme .board .card-stack .card:nth-child(1) {
+  z-index: 3;
+}
+
+.aboutme .board .card-stack .card:nth-child(2) {
+  z-index: 2;
+  -webkit-transform: translate(10px, 10px);
+          transform: translate(10px, 10px);
+  background-color: #191b3b;
+}
+
+.aboutme .board .card-stack .card:nth-child(2).active {
+  -webkit-transform: translate(100%, 10px);
+          transform: translate(100%, 10px);
+}
+
+.aboutme .board .card-stack .card:nth-child(3) {
+  z-index: 1;
+  -webkit-transform: translate(20px, 20px);
+          transform: translate(20px, 20px);
+}
+
+.aboutme .board .card-stack .card:nth-child(3).active {
+  -webkit-transform: translate(200%, 0px);
+          transform: translate(200%, 0px);
+}
+
+.aboutme .board .tech {
+  height: 500px;
+  width: 500px;
+  margin: 0 2rem;
+  color: whitesmoke;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2f0961), to(transparent));
+  background: linear-gradient(0deg, #2f0961, transparent);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
+  line-height: 1.5rem;
+}
+
+.aboutme .board .tech .tech-background {
+  height: 100%;
+  width: 100%;
+  background-image: url("../projekty/spaceship.png");
+  background-size: cover;
+  padding: 2rem;
+  background-repeat: no-repeat;
+  background-position: 85px 65px;
+}
+
+.aboutme .board .tech .tech-background > div {
+  width: 60%;
+  text-align: center;
+}
+
+.aboutme .board .tech .tech-section {
+  margin-bottom: 1rem;
+}
+
+.aboutme .board .tech h1 {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1570px) {
+  .aboutme > .info {
+    padding: 1.3rem;
   }
+  .card-stack > .card {
+    height: 545px !important;
+    width: 290px !important;
+    font-size: 15px;
+  }
+  .tech {
+    height: 545px !important;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .aboutme {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .aboutme .info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-right: none;
+  }
+  .aboutme .board {
+    height: 800px;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+}
+
+@media only screen and (min-width: 991px) {
   main footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -256,9 +482,6 @@ main footer i {
   }
   main footer .footer-contact {
     margin-right: auto;
-  }
-  main footer .footer-textWrap > i {
-    display: block;
   }
 }
 

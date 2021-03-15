@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link rel="stylesheet" href="./css/index.css" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&family=Squada+One&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Kleczewsky.com - O Mnie</title>
+    </head>
+
+    <body>
+        <main>
+            <header id="header-menu">
+                <nav class="navBarWrap">
+                    <ul class="navBarList">
+                        <li class="nav--button">
+                            <a href="./">Glowna </a>
+                        </li>
+
+                        <li class="nav--button">
+                            <a href="./projekty.html">Projekty</a>
+                        </li>
+
+                        <li class="nav--button active">
+                            <a href="#">O Mnie</a>
+                        </li>
+                    </ul>
+                </nav>
+                <script src="./scripts/nav.js" type="text/javascript"></script>
+            </header>
+
+            <section class="content">
+                <div class="aboutme">
+                    <div class="info">
+                        <div class="info-face">
+                            <img src="./photos/mugshot.jpg" alt="mugshot" />
+                        </div>
+
+                        <div class="info-detalis">
+                            <h2>Eryk Kleczewski</h2>
+                            <h2>Polska</h2>
+                            <h2>
+                                <a href="mailto:ekkleczewski@gmail.com">
+                                    ekkleczewski@gmail.com</a
+                                >
+                            </h2>
+                            <h2>
+                                <a href="https://github.com/kleczewsky"
+                                    >Github</a
+                                >
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="board">
+                        <div class="card-stack">
+                            <div class="card">
+                                <div class="img-container">
+                                    <img
+                                        src="./projekty/statekPion.png"
+                                        alt="statek bio"
+                                    />
+                                </div>
+                                <p>
+                                    Cześć, jestem młodym adeptem sztuki
+                                    programowania, który pierwsze koty posłał za
+                                    płoty. Swoją przygodę zacząłem od C++ i
+                                    modyfikacji gier w ich środowisku runtime
+                                    (operacje na pamięci). Było to dla mnie
+                                    katalizatorem pasji do kodowania. Nauczyłem
+                                    się wtedy toczyć epickie bitwy z bugami oraz
+                                    szybko przegrupowywać się po porażkach. Była
+                                    to też świetna okazja, aby zapoznać się z
+                                    technikami inżynierii wstecznej
+                                    programów(gier).
+                                </p>
+                                <button
+                                    onclick="let x = document.querySelectorAll('.card');
+                                    x[0].classList.toggle('active');x[1].classList.toggle('active');
+                                    x[2].classList.toggle('active') ? this.innerText='Wystarczy...' : this.innerText='Czytaj dalej...' "
+                                >
+                                    Czytaj dalej...
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="img-container">
+                                    <img
+                                        src="./projekty/statekUpg.png"
+                                        alt="statek bio"
+                                    />
+                                </div>
+                                <p>
+                                    Po tym mój kompas poprowadził mnie w stronę
+                                    cybersecurity, dokładniej bezpieczeństwa w
+                                    sieciach lokalnych. Poznałem wtedy różne
+                                    techniki ataków, które można było w tamtym
+                                    czasie skutecznie przeprowadzać na sieci i
+                                    ich użytkownikach. Rozwinąłem wtedy także
+                                    swoje zrozumienie środowiska LAN.
+                                </p>
+                            </div>
+                            <div class="card">
+                                <div class="img-container">
+                                    <img
+                                        src="./projekty/statki.png"
+                                        alt="statek bio"
+                                    />
+                                </div>
+                                <p>
+                                    W technikum zaczęło się moje zainteresowanie
+                                    aplikacjami internetowymi, stronami www.
+                                    Tutaj rozpocząłem swoją przygodę z
+                                    front-endem i kierunek swojej kariery
+                                    przestawiłem na programowanie. Nie wykluczam
+                                    możliwości zmiany swojej specjalizacji na
+                                    zaplecze, bądź na inną dziedzinę
+                                    programowania.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tech">
+                            <div class="tech-background">
+                                <h1>Technologie których używam</h1>
+                                <div class="tech-section front">
+                                    <p>HTML5</p>
+                                    <p>SCSS</p>
+                                    <p>JS(ES6)</p>
+                                    <p>ReactJS</p>
+                                    <p>Three.js</p>
+                                </div>
+                                <div class="tech-section back">
+                                    <p>MySQL</p>
+                                    <p>PHP</p>
+                                </div>
+                                <div class="tech-section extra">
+                                    <p>Photoshop</p>
+                                    <p>Illustrator / XDesign</p>
+                                    <p>C++</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div class="footer-contact">
+                    ekkleczewski@gmail.com
+                    <a href="https://github.com/MrNikoPL"> Github</a>
+                </div>
+                <div class="footer-textWrap">
+                    <object
+                        type="image/svg+xml"
+                        data="./assets/gamepad.svg"
+                    ></object>
+                    <object
+                        type="image/svg+xml"
+                        data="./assets/arrow_right.svg"
+                    ></object>
+                    <span class="footer-text">
+                        © kleczewsky.com
+                        <strong class="secondary-color">2021</strong>
+                    </span>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
